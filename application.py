@@ -1,7 +1,9 @@
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route("/")
-def hello():
-    return "YOOO WHAT IS UP MY DAWGSSSSSSS\n" \
-           "WE BOUTA BE LIT"
+def home():
+    return render_template("index.html")
+
+if __name__ == "__main__":
+    app.run(debug=True)
