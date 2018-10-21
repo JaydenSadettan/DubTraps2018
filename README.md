@@ -1,6 +1,6 @@
-# Python Flask app on Azure Web App for Containers
+# NutriEye - A Python Flask app on Azure Web App for Containers
 
-This our project. What to say what to do.
+NutriEye is a web application that gives you nutrition facts of a food item from an image you upload. We believe in making informed decisions, especially when it comes to your health. Using Microsoft Azure's Computer Vision API, we can identify your food and its nutrients for you. With the use of NutriEye, we encourage discovering new foods you haven't tried and learning more about the current foods you put in your body. The default serving size pertaining to our data is 100 grams.
 
 # Contributing
 
