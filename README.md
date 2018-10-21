@@ -1,8 +1,6 @@
 # Python Flask app on Azure Web App for Containers
 
-This is a minimal sample app that demonstrates how to run a Python Flask application on Azure App Service on Linux.
-
-For more information, please see the [Python on App Service quickstart](https://docs.microsoft.com/en-us/azure/app-service/containers/quickstart-python).
+This our project. What to say what to do.
 
 # Contributing
 
