@@ -133,6 +133,3 @@ class ReadImage:
         # while row:
         #     print(str(row[0]) + " " + str(row[1]))
         #     row = cursor.fetchone()
-
-x = ReadImage("https://www.vaporfi.com.au/media/catalog/product/cache/34/thumbnail/600x600/9df78eab33525d08d6e5fb8d27136e95/v/z/vz_eliquid_juicy_red_apple.jpg"
-              "", local=False)
