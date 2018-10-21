@@ -5,12 +5,115 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="../Static/images/EyeIcon.png">
     <title>NutriEye</title>
+    
+    <!--Normalize-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    
+    <!--Our files-->
     <link type="text/css" href="../static/index.css" rel="stylesheet" />
-    <script src="/static/index.js"></script>
+    <script src="../static/index.js"></script>
   </head>
+  
   <body>
-    <p> Testing for NutriEye </p>
-    <img src = "/static/images/EyeLogo.png" width="400" height="200"> </img>
+    <div class="container">
+      <!--Header- logo-->
+      <div class="row" id="logoDiv">
+        <header>
+          <img id="logo" src="../static/images/EyeLogo.png" alt="NutriEye logo">
+        </header>
+      </div>
+    
+      <!--About the app-->
+      <div class="row">
+        <div class="container">
+          <h1>What we do</h1>
+          <div class="row">
+            <p>Description of what the app does. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id turpis massa. Nulla sagittis urna sollicitudin, dictum nulla et, tincidunt massa. Fusce at ligula lobortis, ultricies nulla in, vulputate sem. Nam rutrum lectus in placerat tincidunt. Aliquam est nunc, elementum ut mi id, feugiat hendrerit nisi. Donec pulvinar id ante tempus tincidunt. Nam tortor nisl, sollicitudin eu posuere id, fringilla eu turpis. Ut sollicitudin fringilla maximus. Integer hendrerit odio ut semper tempor.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!--Image upload-->
+      <div class="row">
+        <div class="container">
+          <div class="row">
+            <h2>Get the nutrition facts!</h2>
+          </div>
+          
+          <div class="row">
+            <form class="form-inline" name="image" action="static/index.js">
+              <div class="input-group">
+                <label for="userImage">Select an image of food</label>
+                <input class="form-control-file" id="userImage" type="file" name="userImage">
+              </div>
+              <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      <!--Nutrition facts-->
+      <div class="row">
+        <!--Area for the nutrition facts-->
+        <div class="container">
+          <div class="row" id="foodHeading">
+            <!--TEST, JS WILL GENERATE THE H2 TAG-->
+            <h2>Nutrition facts for chocolate chip cookie</h2>
+          </div>
+          <div class="row" id="factsTable">
+          <!--TEST, JS WILL GENERATE THE TABLE ONCE USER UPLOADS IMAGE-->
+            <table class="table table-bordered table-striped table-hover">
+              <caption>Table of the nutrition facts</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Fact</th>
+                  <th scope="col">Value</th>
+                  <th scope="col">% of Daily Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Calories</th>
+                  <td>150</td>
+                  <td>7.5%</td>
+                </tr>
+                <tr>
+                  <th scope="row">Total Fat</th>
+                  <td>6g</td>
+                  <td>8%</td>
+                </tr>
+                <tr>
+                  <th scope="row">Cholesterol</th>
+                  <td>0mg</td>
+                  <td>0%</td>
+                </tr>
+                <tr>
+                  <th scope="row">Sodium</th>
+                  <td>115mg</td>
+                  <td>5%</td>
+                </tr>
+                <tr>
+                  <th scope="row">Total Carbohydrate</th>
+                  <td>23g</td>
+                  <td>8%</td>
+                </tr>
+                <tr>
+                  <th scope="row">Protein</th>
+                  <td>2g</td>
+                  <td>4%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      
+    </div>
   </body>
 </html>
