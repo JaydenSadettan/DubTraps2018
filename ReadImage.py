@@ -1,4 +1,4 @@
-import requests, http.client, urllib.request, urllib.parse, urllib.error, json
+import requests, http.client, urllib.request, urllib.parse, urllib.error, json, pyodbc
 
 # Replace the subscription_key string value with your valid subscription key.
 subscription_key = '0ed7b46d5b8a4e4aaa155f066e8a928a'
@@ -17,6 +17,19 @@ vision_base_url = "https://westcentralus.api.cognitive.microsoft.com/vision/v1.0
 
 analyze_url = vision_base_url + "analyze"
 
+# SQL Stuff
+
+server = 'dubtraps2018.database.windows.net'
+database = 'DubTraps2018'
+username = 'sadettan'
+password = 'DubTraps2018'
+driver = '{ODBC Driver 13 for SQL Server}'
+# cnxn = pyodbc.connect('DRIVER='+driver+';SERVER='+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+ password)
+cnxn = pyodbc.connect('DRIVER=%s;SERVER=%s;PORT=1433;DATABASE=%s;UID=%s;PWD=%s' % (driver, server, database, username, password))
+
+cursor = cnxn.cursor()
+
+
 class ReadImage:
     # Replace the three dots below with the URL of a JPEG image of a celebrity.
     def __init__(self, url, local):
@@ -25,7 +38,10 @@ class ReadImage:
             print("Exit")
             return 1
         self.dict = dict()
+        self.name = None
         self._gettags(self.parsed)
+        self._list_of_names()
+        self._getdata = self._readSQL()
 
     def _getjson(self, url, local):
         if local:
@@ -37,7 +53,7 @@ class ReadImage:
 
             params = urllib.parse.urlencode({
                 # Request parameters. All of them are optional.
-                'visualFeatures': 'Tags',
+                'visualFeatures': 'Tags,Color',
                 'language': 'en',
             })
             image_path = open(url, "rb").read()
@@ -98,4 +114,25 @@ class ReadImage:
     def _gettags(self, response):
         for x in response['tags']:
             self.dict[x['name']] = x['confidence']
+            self.name = x['name']
 
+    def _list_of_names(self):
+        names = list()
+        for x in self.dict:
+            names.append(x)
+        self.names = names
+
+    def _readSQL(self):
+        for x in self.names:
+            temp = "'%s%s'" % (x, '%')
+            cursor.execute("SELECT TOP 1 * FROM Nutrition WHERE name LIKE " + temp)
+            row = cursor.fetchone()
+            if row is not None:
+                print(row)
+                break
+        # while row:
+        #     print(str(row[0]) + " " + str(row[1]))
+        #     row = cursor.fetchone()
+
+x = ReadImage("https://www.vaporfi.com.au/media/catalog/product/cache/34/thumbnail/600x600/9df78eab33525d08d6e5fb8d27136e95/v/z/vz_eliquid_juicy_red_apple.jpg"
+              "", local=False)
