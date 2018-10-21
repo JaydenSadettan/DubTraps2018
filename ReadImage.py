@@ -125,11 +125,18 @@ class ReadImage:
     def _readSQL(self):
         for x in self.names:
             temp = "'%s%s'" % (x, '%')
-            cursor.execute("SELECT TOP 1 * FROM Nutrition WHERE name LIKE " + temp)
-            row = cursor.fetchone()
-            if row is not None:
-                print(row)
-                break
-        # while row:
-        #     print(str(row[0]) + " " + str(row[1]))
-        #     row = cursor.fetchone()
+            cursor.execute("SELECT * FROM Nutrition WHERE name LIKE " + temp)
+            vars = ["Name", "Calories", "Protein", "Fat", "Carbs", "Sugar",
+                    "Sodium", "Cholesterol", "Sat. Fat", "Net Carbs"]
+            s = "<table style='border:1px solid red'>"
+            for row in cursor:
+                s = s + "<tr>"
+                # print(row)
+                # print(vars)
+                for x in range(0, len(row)):
+
+                    s = s + "<th>" + vars[x] + "</th>"
+                    s = s + "<td>" + str(row[x]) + "</td>"
+            s = s + "</tr>"
+
+            return s

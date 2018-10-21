@@ -1,8 +1,21 @@
 <html>
 <head>
     <title>Result</title>
+    <!--Adobe typekit-->
+    <link rel="stylesheet" href="https://use.typekit.net/ioi7rmo.css">
+
+    <!--Normalize-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+
+    <!--Our files-->
+    <link type="text/css" href="../static/index.css" rel="stylesheet" />
 </head>
+        {% for item in data %}
 <body>
+
+
             <table class="table table-bordered table-striped table-hover">
               <caption>Table of the nutrition facts</caption>
               <thead>
@@ -13,36 +26,58 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                    <tr>
+                      <th scope="row">Calories</th>
+                      <td>%{{item[1]}}</td>
+                      <td>7.5%</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Protein</th>
+                      <td>{{item[2]}}</td>
+                      <td>4%</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Total Fat</th>
+                      <td>{{item[3]}}</td>
+                      <td>8%</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Total Carbohydrate</th>
+                      <td>{{item[4]}}</td>
+                      <td>8%</td>
+                    </tr>
+                     <tr>
+                      <th scope="row">Sugar</th>
+                      <td>{{item[5]}}</td>
+                      <td>0%</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Sodium</th>
+                      <td>{{item[6]}}</td>
+                      <td>5%</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Cholesterol</th>
+                      <td>{{item[7]}}</td>
+                      <td>0%</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Saturated Fat</th>
+                      <td>{{item[8]}}</td>
+                      <td>0%</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Net Carbs</th>
+                      <td>{{item[9]}}</td>
+                      <td>0%</td>
+                    </tr>
+                  <tr>
                   <th scope="row">Calories</th>
                   <td>150</td>
                   <td>7.5%</td>
                 </tr>
-                <tr>
-                  <th scope="row">Total Fat</th>
-                  <td>6g</td>
-                  <td>8%</td>
-                </tr>
-                <tr>
-                  <th scope="row">Cholesterol</th>
-                  <td>0mg</td>
-                  <td>0%</td>
-                </tr>
-                <tr>
-                  <th scope="row">Sodium</th>
-                  <td>115mg</td>
-                  <td>5%</td>
-                </tr>
-                <tr>
-                  <th scope="row">Total Carbohydrate</th>
-                  <td>23g</td>
-                  <td>8%</td>
-                </tr>
-                <tr>
-                  <th scope="row">Protein</th>
-                  <td>2g</td>
-                  <td>4%</td>
-                </tr>
               </tbody>
             </table>
+        {% endfor %}
+
 </body>

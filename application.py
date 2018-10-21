@@ -31,8 +31,12 @@ def result():
 
     user_stats = ReadImage(image[0], local=True)
     os.remove(image[0])
-
-    return str(user_stats.dict)
+    s = user_stats._getdata
+    return '''<html> <head>    
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" 
+    integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    </head><body>''' + s + "</body></html>"
 
 @app.errorhandler(404)
 def page_not_found(e):
