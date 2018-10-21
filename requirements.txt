@@ -7,4 +7,3 @@ Werkzeug==0.14.1
 requirements==2.20.0
 requests==2.18.4
 oauthlib==2.1.0
-Flask-Uploads==0.2.1
