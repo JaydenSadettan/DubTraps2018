@@ -1,4 +1,4 @@
-import requests, http.client, urllib.request, urllib.parse, urllib.error, base64, json
+import requests, http.client, urllib.request, urllib.parse, urllib.error, json
 
 # Replace the subscription_key string value with your valid subscription key.
 subscription_key = '0ed7b46d5b8a4e4aaa155f066e8a928a'
