@@ -1,5 +1,19 @@
 /* Default for extra small screens less than 576px */
+header, form{
+  margin: auto;
+}
 
+#logo {
+  max-width: 50%;
+}
+
+.row {
+  padding: 1em;
+}
+
+#logoDiv {
+  padding: 0;
+}
 
 /* Small devices, phones */
 @media (min-width: 576px) {
