@@ -1,7 +1,14 @@
 /* Default for extra small screens less than 576px */
-header, form{
-  margin: auto;
+body {
+  font-family: benton-sans, sans-serif;
 }
+
+h1, h2 {
+  font-weight: 500;
+  color: #E30003;
+}
+
+
 
 #logo {
   max-width: 50%;
@@ -11,8 +18,8 @@ header, form{
   padding: 1em;
 }
 
-#logoDiv {
-  padding: 0;
+header, form {
+  margin: auto;
 }
 
 /* Small devices, phones */
