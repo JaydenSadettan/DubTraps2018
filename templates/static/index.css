@@ -1,0 +1,22 @@
+/* Default for extra small screens less than 576px */
+
+
+/* Small devices, phones */
+@media (min-width: 576px) {
+  
+}
+
+/* Medium devices, tablets */
+@media (min-width: 768px) {
+  
+}
+
+/* Large devices, desktops */
+@media (min-width: 992px) {
+  
+}
+
+/* Extra-large devices, large desktops*/
+@media (min-width: 1200px) {
+  
+}
