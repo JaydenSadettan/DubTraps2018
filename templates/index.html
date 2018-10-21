@@ -5,11 +5,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="description" content="">
+    <meta name="description" content="Web application that gets the nutrition facts of a food based on an image the user inputs.">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="SHORTCUT ICON" href="../Static/images/EyeIcon.ico" type="image/x-icon" />
     <link rel="icon" type="image/ico" href="../Static/images/EyeIcon.ico">
     <title>NutriEye</title>
+    
+    <!--Adobe typekit-->
+    <link rel="stylesheet" href="https://use.typekit.net/ioi7rmo.css">
     
     <!--Normalize-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
@@ -26,7 +29,9 @@
       <!--Header- logo-->
       <div class="row" id="logoDiv">
         <header>
-          <img id="logo" src="../static/images/EyeLogo.png" alt="NutriEye logo">
+          <div>
+            <img id="logo" src="../static/images/NutriEyeLogo.png" alt="NutriEye logo">
+          </div>
         </header>
       </div>
     
@@ -48,7 +53,7 @@
           </div>
           
           <div class="row">
-            <form class="form-inline" name="image" enctype=multipart/form-data action="{{ url_for('upload') }}">
+            <form class="form-inline" name="image" enctype="multipart/form-data" action="{{ url_for('upload') }}">
               <!--div class="input-group">
                 <label for="userImage">Select an image of food</label>
                 <input class="form-control-file" id="userImage" type="file" name="userImage" accept="image/*">
