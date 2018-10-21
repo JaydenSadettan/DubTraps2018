@@ -95,15 +95,7 @@ class ReadImage:
                 print(e)  # print(self.response.url
                 return None
 
-
-
     def _gettags(self, response):
         for x in response['tags']:
             self.dict[x['name']] = x['confidence']
 
-
-test = ReadImage("Static/images/Pencil.png", local=True)
-print(test.dict)
-
-test = ReadImage("https://cdn1-www.dogtime.com/assets/uploads/2014/08/file_23300_cane-corso-dog-breed.jpg", local=Falsex)
-print(test.dict)
