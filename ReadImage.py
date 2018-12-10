@@ -1,7 +1,7 @@
 import requests, http.client, urllib.request, urllib.parse, urllib.error, json, pyodbc
 
 # Replace the subscription_key string value with your valid subscription key.
-subscription_key = '0ed7b46d5b8a4e4aaa155f066e8a928a'
+subscription_key = # Key for Azure SQL Server 
 
 # Replace or verify the region.
 #
@@ -19,10 +19,10 @@ analyze_url = vision_base_url + "analyze"
 
 # SQL Stuff
 
-server = 'dubtraps2018.database.windows.net'
-database = 'DubTraps2018'
-username = 'sadettan'
-password = 'DubTraps2018'
+server = # Server itself
+database = #Database
+username =  # Username for SQL
+password = # Password
 driver = '{ODBC Driver 13 for SQL Server}'
 # cnxn = pyodbc.connect('DRIVER='+driver+';SERVER='+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+ password)
 cnxn = pyodbc.connect('DRIVER=%s;SERVER=%s;PORT=1433;DATABASE=%s;UID=%s;PWD=%s' % (driver, server, database, username, password))
