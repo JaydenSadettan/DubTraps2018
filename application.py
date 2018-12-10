@@ -35,7 +35,8 @@ def result():
     return '''<html> <head>    
     <link rel="stylesheet" 
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" 
-    integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    integrity= "" # I believe I had a key in here. 
+    crossorigin="anonymous">
     </head><body>''' + s + "</body></html>"
 
 @app.errorhandler(404)
